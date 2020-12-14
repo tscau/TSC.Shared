@@ -34,7 +34,7 @@ jobs:
       run: dotnet pack -v normal -c Release --no-restore --include-symbols --include-source -p:PackageVersion=$GITHUB_RUN_ID source/TSC.Shared/TSC.Shared.csproj
     - name: Upload Artifact
       if: ${{ matrix.os == 'ubuntu-latest' }}
-      run: gpr push "source/TSC.Shared/bin/Release/*.nupkg" -k $ {{ secrets.PACKAGES_PAT }}
+      run: gpr push "source/TSC.Shared/bin/Release/*.nupkg" -k ${{ secrets.PACKAGES_PAT }}
       #uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
       #with:
       ##  nupkg-path:  './source/TSC.Shared/bin/Release/*.nupkg'
