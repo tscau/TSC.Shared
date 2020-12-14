@@ -12,7 +12,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix: 
-       os: [ubuntu-latest, windows-latest, macos-latest]
+       os: [ubuntu-latest]
+       #os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -21,6 +22,9 @@ jobs:
         dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore source/TSC.Shared/TSC.Shared.csproj
+    - name: Install GPR
+      if: ${{ matrix.os == 'ubuntu-latest' }}
+      run: dotnet tool install gpr -g
     - name: Build
       run: dotnet build source/TSC.Shared/TSC.Shared.csproj --configuration Release --no-restore
     #- name: Test
@@ -30,10 +34,11 @@ jobs:
       run: dotnet pack -v normal -c Release --no-restore --include-symbols --include-source -p:PackageVersion=$GITHUB_RUN_ID source/TSC.Shared/TSC.Shared.csproj
     - name: Upload Artifact
       if: ${{ matrix.os == 'ubuntu-latest' }}
-      uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
-      with:
-        nupkg-path:  './source/TSC.Shared/bin/Release/*.nupkg'
-        repo-owner:  'rcangus'
-        gh-user:  'rcangus'
-        token:  ${{ secrets.GITHUB_TOKEN }}
+      run: gpr push "source/TSC.Shared/bin/Release/*.nupkg"
+      #uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
+      #with:
+      ##  nupkg-path:  './source/TSC.Shared/bin/Release/*.nupkg'
+      #  repo-owner:  'rcangus'
+      #  gh-user:  'rcangus'
+      #  token:  ${{ secrets.GITHUB_TOKEN }}
     #  run: dotnet nuget push "source/bin/Release/TSC.Shared.1.0.0.nupkg" --source "github"
