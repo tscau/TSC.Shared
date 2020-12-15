@@ -57,17 +57,13 @@ jobs:
       run: dotnet build source/TSC.Shared/TSC.Shared.csproj --configuration Release --no-restore
     #- name: Test
       #run: dotnet test --no-restore --verbosity normal
+    - name: Set Version
+      id: set-version
+      shell: pwsh
+      run: ./.github/SetVersioning_NuGet_GitHub.ps1
     - name: Pack
       if: ${{ matrix.os == 'ubuntu-latest' }}
-      run: dotnet pack -v normal -c Release --no-restore --include-symbols --include-source -p:PackageVersion=$GITHUB_RUN_ID source/TSC.Shared/TSC.Shared.csproj
+      run: dotnet pack -v normal -c Release --no-restore -p:PackageVersion=${{ steps.set-version.outputs.NUGET_VERSION }} source/TSC.Shared/TSC.Shared.csproj
     - name: Upload Artifact
       if: ${{ matrix.os == 'ubuntu-latest' }}
-      run: dotnet nuget push "source/TSC.Shared/bin/Release/*.nupkg" -k ${{ secrets.PACKAGES_PAT }} -s "https://nuget.pkg.github.com/tscau/index.json" --skip-duplicate
-      #run: gpr push "source/TSC.Shared/bin/Release/*.nupkg" -k ${{ secrets.PACKAGES_PAT }}
-      #uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
-      #with:
-      ##  nupkg-path:  './source/TSC.Shared/bin/Release/*.nupkg'
-      #  repo-owner:  'rcangus'
-      #  gh-user:  'rcangus'
-      #  token:  ${{ secrets.GITHUB_TOKEN }}
-    #  run: dotnet nuget push "source/bin/Release/TSC.Shared.1.0.0.nupkg" --source "github"
+      run: dotnet nuget push "source/TSC.Shared/bin/Release/*.nupkg" -k ${{ secrets.PACKAGES_PAT }} -s "https://nuget.pkg.github.com/rcangus/index.json" --skip-duplicate
