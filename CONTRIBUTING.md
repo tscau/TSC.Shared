@@ -15,10 +15,10 @@ propose changes to this document in a pull request.
 Issues are created [here](https://github.com/tscau/TCS.Shared/issues/new).
 
 * [How to Contribute in Issues](https://github.com/tscau/docs/blob/main/development/issues.md#how-to-contribute-in-issues)
-* [Asking for General Help](https://github.com/tscau/docs/development/issues.md#asking-for-general-help)
-* [Submitting a Bug Report](https://github.com/tscau/docs/development/issues.md#submitting-a-bug-report)
-* [Triaging a Bug Report](https://github.com/tscau/docs/development/issues.md#triaging-a-bug-report)
-* [Resolving a Bug Report](https://github.com/tscau/docs/development/issues.md#resolving-a-bug-report)
+* [Asking for General Help](https://github.com/tscau/docs/blob/main/development/issues.md#asking-for-general-help)
+* [Submitting a Bug Report](https://github.com/tscau/docs/blob/main/development/issues.md#submitting-a-bug-report)
+* [Triaging a Bug Report](https://github.com/tscau/docs/blob/main/development/issues.md#triaging-a-bug-report)
+* [Resolving a Bug Report](https://github.com/tscau/docs/blob/main/development/issues.md#resolving-a-bug-report)
 
 ### Issue Closure
 
