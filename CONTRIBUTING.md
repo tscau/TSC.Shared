@@ -10,15 +10,15 @@ The following is a set of guidelines for contributing to Electron.
 These are just guidelines, not rules, use your best judgment and feel free to
 propose changes to this document in a pull request.
 
-## [Issues](https://github.com/tscau/docs/development/issues)
+## [Issues](https://github.com/tscau/docs/development/issues.md)
 
 Issues are created [here](https://github.com/tscau/TCS.Shared/issues/new).
 
-* [How to Contribute in Issues](https://github.com/tscau/docs/development/issues#how-to-contribute-in-issues)
-* [Asking for General Help](https://github.com/tscau/docs/development/issues#asking-for-general-help)
-* [Submitting a Bug Report](https://github.com/tscau/docs/development/issues#submitting-a-bug-report)
-* [Triaging a Bug Report](https://github.com/tscau/docs/development/issues#triaging-a-bug-report)
-* [Resolving a Bug Report](https://github.com/tscau/docs/development/issues#resolving-a-bug-report)
+* [How to Contribute in Issues](https://github.com/tscau/docs/development/issues.md#how-to-contribute-in-issues)
+* [Asking for General Help](https://github.com/tscau/docs/development/issues.md#asking-for-general-help)
+* [Submitting a Bug Report](https://github.com/tscau/docs/development/issues.md#submitting-a-bug-report)
+* [Triaging a Bug Report](https://github.com/tscau/docs/development/issues.md#triaging-a-bug-report)
+* [Resolving a Bug Report](https://github.com/tscau/docs/development/issues.md#resolving-a-bug-report)
 
 ### Issue Closure
 
