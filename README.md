@@ -4,7 +4,7 @@ This repo will contain all the common code that will be shared across ALL projec
 ### Contact
 You can contact the owner of this repo. You can send an open an issue and the owner will respond
 
-### Accessing the Nuget pacakge
+### Accessing the Nuget package
 To access the nuget package, you will need to be able to read the packages
 
 ### CI/CD
